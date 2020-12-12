@@ -4,4 +4,4 @@ Some Software Coding Challenges from Leetcode
 
 | Difficulty | Title | Solution |
 | :--------: | :---: | :---: |
-| Easy | Two Sum | './Easy/Javascript/two_sum.js' |
+| Easy | Two Sum | (./Easy/Javascript/two_sum.js) |
