@@ -2,6 +2,6 @@
 Some Software Coding Challenges from Leetcode
 
 
-| Difficulty | Title | Solution |
-| :--------: | :---: | :---: |
-| Easy | Two Sum | [Two Sum Solution](https://github.com/y0dev/code_challenges/Easy/Javascript/two_sum.js) |
+| Difficulty | Title | Solution | Speed | Size |
+| :--------: | :---: | :------: | :---: | :--: |
+| Easy | Two Sum | [Two Sum Solution](https://github.com/y0dev/code_challenges/blob/main/Easy/Javascript/two_sum.js) |
