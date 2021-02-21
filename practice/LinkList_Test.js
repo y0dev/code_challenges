@@ -1,4 +1,4 @@
-const {LinkList} = require('../lib/LinkList');
+const {LinkList, LinkedList} = require('../lib/LinkList');
 
 const list = new LinkList();
 list.append(4);
@@ -11,3 +11,14 @@ list.print();
 list.insertAt(1,2);
 list.insertAt(0,2);
 list.print();
+
+const list1 = new LinkedList();
+list1.append('spot');
+list1.append('dog');
+list1.append('car');
+list1.print();
+console.log(list1.isEmpty());
+console.log(list1.size());
+list1.remove('spot');
+console.log(list1.indexOf('car'));
+list1.print();
