@@ -36,7 +36,7 @@ var reverse = function(x) {
     if(negative)
         reverse_num *= -1;
     
-    if(reverse_num > (2 ** 31))
+    if(reverse_num > ((2 ** 31) - 1)|| reverse_num < (-1 * (2 ** 31)))
         return 0;
     
     return reverse_num;
@@ -45,3 +45,4 @@ var reverse = function(x) {
 console.log(reverse(-120))
 console.log(reverse(20))
 console.log(reverse(5323043326))
+console.log(reverse(-2147483648))
