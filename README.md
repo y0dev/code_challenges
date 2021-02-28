@@ -1,5 +1,5 @@
-# code_challenges
-Some Software Coding Challenges from Leetcode
+# LeetCode Questions
+Some Software Coding Challenges from LeetCode
 
 
 |     #    | Difficulty | Title | Speed | Size |
