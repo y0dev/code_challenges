@@ -23,28 +23,21 @@
 var longestCommonPrefix = function(strs) {
     if(strs.length < 1) { return ""; }
 
-    let wordQueue = [];
-    let index = 1;
-    for (let i = 0; i < strs[0].length; i++) {
-        wordQueue.push(strs[0][i]);
-    }
+    let firstWord = strs[0];
+    let index = 0;
+    let prefix = "";
 
-    while(wordQueue.length > 0 && index <= strs.length - 1) {
-        let queueLength = wordQueue.length;
-        let failed = false;
-        for (let i = 0; i < queueLength; i++) {
-            if(strs[index][i] === wordQueue.shift() && !failed) {
-                wordQueue.push(strs[index][i]);
-            } else {
-                failed = true;
-            }
+    for (const character of firstWord) {
+        for (let i = 1; i < strs.length; i++) {
+            let word = strs[i];
+            let charAtIndex = word[index];
+            
+            if(charAtIndex !== character || index > word.length)
+                return prefix;
+            
         }
         index++;
-    }
-    
-    let prefix = "";
-    while(wordQueue.length > 0) {
-       prefix += wordQueue.shift();
+        prefix += character;
     }
     return prefix;
 };
