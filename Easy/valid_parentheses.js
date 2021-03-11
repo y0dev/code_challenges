@@ -12,43 +12,23 @@
  * @return {boolean}
  */
  var isValid = function(s) {
-    const openPars = {
-        block: '[',
-        bracket: '{',
-        para: '('
-    };
-
-    const closePars = {
-        block: ']',
-        bracket: '}',
-        para: ')'
-    }
-    let stack = [];
-    var i = 0;
-    while(stack.length > 0 || i < s.length)
+    const stack = [];
+    for(var i = 0; i < s.length;i++)
     {
-        if(s[i] === openPars.block || s[i] === openPars.bracket || s[i] === openPars.para) {
-            stack.push(s[i]);
-            console.log(`Opening: ${s[i]}`);
-            i++;
-            continue;
-        }
-
-        if(s[i] === closePars.block || s[i] === closePars.bracket || s[i] === closePars.para) {
-            var top = stack[stack.length-1];
-            if((s[i] === closePars.block && top === openPars.block) || 
-            (s[i] === closePars.bracket && top === openPars.bracket) || 
-            (s[i] === closePars.para && top === openPars.para)) {
-                stack.pop();
-                console.log(`Closing: ${s[i]}`);
-                i++;
-                continue;
-            }
-        }
-        stack.pop();
-        return false;
+        const char = s[i];
+        console.log(char);
+        if(char === '(' || char === '[' || char === '{')
+            stack.push(char);
+        else if (stack.length > 0 && char === ')' && stack[stack.length-1] === '(')
+            stack.pop();
+        else if (stack.length > 0 && char === ']' && stack[stack.length-1] === '[')
+            stack.pop();
+        else if (stack.length > 0 && char === '}' && stack[stack.length-1] === '{')
+            stack.pop();
+        else
+            return false;
     }
-    return true;
+    return stack.length < 1;
 };
 
 console.log(isValid('([])[]'));
